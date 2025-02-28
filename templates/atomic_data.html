@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Carsus Dashboard</title>
+  </head>
+  <body class="bg-zinc-100">
+    <!-- Hello page {{lines_arr}} -->
+    <div class="w-5/6 mx-auto py-5 antialised">
+      <h1 class="font-sans font-bold mb-10 text-4xl text-center mb-3">
+        Carsus Dashboard
+      </h1>
+
+      <div class="mx-6 mb-10">
+        <h2 class="text-2xl font-semibold mb-2">About myself</h2>
+        <p class="text-lg tracking-tight font-light">
+          My name is Karthik, a senior-year college student at NITT with a
+          passion for building software. I interned at FinTech company(Capital
+          One), where I worked on a Python codebase. I'm deeply interested in
+          open source and have been trying to familiarize myself with the
+          <strong>TARDIS</strong> repositories for quite some time now. I've few
+          open PRs on the main repo as well. I'm excited to further my
+          involvement in the TARDIS community and continue making meaningful
+          contributions. And lastly one fun fact about myself is, I enjoy window
+          shopping a lot.
+        </p>
+      </div>
+
+      <p
+        class="text-lg shadow-lg mb-2 bg-white font-light mx-3 py-2 px-3 rounded-md w-fit tracking-tight"
+      >
+        <strong>Objective :</strong> Use Jinja2 to generate an HTML Report that
+        investigates an atomic file. Display top 50 rows of levels and lines
+        dataframes from the atomic file for Silicon
+      </p>
+
+      <p
+        class="text-lg shadow-lg bg-white font-light mx-3 py-2 px-3 rounded-md w-fit tracking-tight"
+      >
+        The data below is retrieved from the atomic file
+        <span class="italic">kurucz_cd23_chianti_Si</span>
+      </p>
+
+      <div class="px-6 py-4">
+        <h2 class="text-2xl font-semibold text-gray-800">
+          Atomic Energy Levels
+        </h2>
+      </div>
+
+      {% include 'levels.html' %}
+
+      <div class="px-6 py-4 0">
+        <h2 class="text-2xl font-semibold text-gray-800">
+          Atomic Energy Lines
+        </h2>
+      </div>
+      {% include 'lines.html' %}
+    </div>
+  </body>
+</html>

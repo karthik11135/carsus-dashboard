@@ -1,0 +1,146 @@
+<div class="mx-4 h-[70vh] overflow-scroll">
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+
+
+      <div class="overflow-x-auto">
+        <table class="min-w-full">
+          <thead class="bg-gray-50">
+            <tr>
+              <th
+                class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200"
+              >
+                Atom
+              </th>
+              <th
+                class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200"
+              >
+                Ion
+              </th>
+              <th
+                class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200"
+              >
+                Lower Level
+              </th>
+              <th
+                class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200"
+              >
+                Upper Level
+              </th>
+              <th
+                class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200"
+              >
+                Line ID
+              </th>
+              <th
+                class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200"
+              >
+                Wavelength
+              </th>
+              <th
+                class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200"
+              >
+                f_ul
+              </th>
+              <th
+                class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200"
+              >
+                f_lu
+              </th>
+              <th
+                class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200"
+              >
+                ν (Hz)
+              </th>
+              <th
+                class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200"
+              >
+                B_lu
+              </th>
+              <th
+                class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200"
+              >
+                B_ul
+              </th>
+              <th
+                class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
+              >
+                A_ul
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-white">
+            {% for item in lines_arr %}
+            <tr
+              class="hover:bg-gray-50 transition-colors border-t border-gray-200"
+            >
+              <td
+                class="px-4 py-3 whitespace-nowrap text-sm text-gray-900 border-r border-gray-200"
+              >
+                {{ item.atomic_number }}
+              </td>
+              <td
+                class="px-4 py-3 whitespace-nowrap text-sm text-gray-500 border-r border-gray-200"
+              >
+                {{ item.ion_number }}
+              </td>
+              <td
+                class="px-4 py-3 whitespace-nowrap text-sm text-gray-500 border-r border-gray-200"
+              >
+                Level {{ item.level_number_lower }}
+              </td>
+              <td
+                class="px-4 py-3 whitespace-nowrap text-sm text-gray-500 border-r border-gray-200"
+              >
+                Level {{ item.level_number_upper }}
+              </td>
+              <td
+                class="px-4 py-3 whitespace-nowrap text-sm text-gray-500 font-mono border-r border-gray-200"
+              >
+                {{ item.line_id }}
+              </td>
+              <td
+                class="px-4 py-3 whitespace-nowrap text-sm text-gray-500 border-r border-gray-200"
+              >
+                {{ "%.2f"|format(item.wavelength|float) }} Å
+              </td>
+              <td
+                class="px-4 py-3 whitespace-nowrap text-sm text-gray-500 border-r border-gray-200"
+              >
+                {{ "%.3e"|format(item.f_ul|float) }}
+              </td>
+              <td
+                class="px-4 py-3 whitespace-nowrap text-sm text-gray-500 border-r border-gray-200"
+              >
+                {{ "%.3e"|format(item.f_lu|float) }}
+              </td>
+              <td
+                class="px-4 py-3 whitespace-nowrap text-sm text-gray-500 border-r border-gray-200"
+              >
+                {{ "%.3e"|format(item.nu|float) }}
+              </td>
+              <td
+                class="px-4 py-3 whitespace-nowrap text-sm text-gray-500 border-r border-gray-200"
+              >
+                {{ "%.3e"|format(item.B_lu|float) }}
+              </td>
+              <td
+                class="px-4 py-3 whitespace-nowrap text-sm text-gray-500 border-r border-gray-200"
+              >
+                {{ "%.3e"|format(item.B_ul|float) }}
+              </td>
+              <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-500">
+                {{ "%.3e"|format(item.A_ul|float) }}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="px-6 py-4 border-t border-gray-200 bg-gray-50">
+        <p class="text-xs text-gray-600">
+          Total {{ lines_arr|length }} transition lines
+        </p>
+      </div>
+    </div>
+  </div>
