@@ -9,27 +9,17 @@
               <th
                 class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200"
               >
-                Atom
+                Line Id
               </th>
               <th
                 class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200"
               >
-                Ion
+                Lower Level Id
               </th>
               <th
                 class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200"
               >
-                Lower Level
-              </th>
-              <th
-                class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200"
-              >
-                Upper Level
-              </th>
-              <th
-                class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200"
-              >
-                Line ID
+                Upper Level Id
               </th>
               <th
                 class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200"
@@ -39,9 +29,19 @@
               <th
                 class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200"
               >
-                f_ul
+               gf
               </th>
               <th
+                class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200"
+              >
+                Loggf
+              </th>
+              <th
+                class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200"
+              >
+                ds_id
+              </th>
+              <!-- <th
                 class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200"
               >
                 f_lu
@@ -65,7 +65,7 @@
                 class="px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
               >
                 A_ul
-              </th>
+              </th> -->
             </tr>
           </thead>
           <tbody class="bg-white">
@@ -76,61 +76,39 @@
               <td
                 class="px-4 py-3 whitespace-nowrap text-sm text-gray-900 border-r border-gray-200"
               >
-                {{ item.atomic_number }}
-              </td>
-              <td
-                class="px-4 py-3 whitespace-nowrap text-sm text-gray-500 border-r border-gray-200"
-              >
-                {{ item.ion_number }}
-              </td>
-              <td
-                class="px-4 py-3 whitespace-nowrap text-sm text-gray-500 border-r border-gray-200"
-              >
-                Level {{ item.level_number_lower }}
-              </td>
-              <td
-                class="px-4 py-3 whitespace-nowrap text-sm text-gray-500 border-r border-gray-200"
-              >
-                Level {{ item.level_number_upper }}
-              </td>
-              <td
-                class="px-4 py-3 whitespace-nowrap text-sm text-gray-500 font-mono border-r border-gray-200"
-              >
                 {{ item.line_id }}
               </td>
               <td
                 class="px-4 py-3 whitespace-nowrap text-sm text-gray-500 border-r border-gray-200"
               >
-                {{ "%.2f"|format(item.wavelength|float) }} Å
+                {{ item.lower_level_id }}
               </td>
               <td
                 class="px-4 py-3 whitespace-nowrap text-sm text-gray-500 border-r border-gray-200"
               >
-                {{ "%.3e"|format(item.f_ul|float) }}
+              {{ item.upper_level_id }}
               </td>
               <td
                 class="px-4 py-3 whitespace-nowrap text-sm text-gray-500 border-r border-gray-200"
               >
-                {{ "%.3e"|format(item.f_lu|float) }}
+                {{ item.wavelength }}
+              </td>
+              <td
+                class="px-4 py-3 whitespace-nowrap text-sm text-gray-500 font-mono border-r border-gray-200"
+              >
+                {{ item.gf }}
               </td>
               <td
                 class="px-4 py-3 whitespace-nowrap text-sm text-gray-500 border-r border-gray-200"
               >
-                {{ "%.3e"|format(item.nu|float) }}
+                {{ item.loggf }}
               </td>
               <td
                 class="px-4 py-3 whitespace-nowrap text-sm text-gray-500 border-r border-gray-200"
               >
-                {{ "%.3e"|format(item.B_lu|float) }}
+                {{ item.ds_id }}
               </td>
-              <td
-                class="px-4 py-3 whitespace-nowrap text-sm text-gray-500 border-r border-gray-200"
-              >
-                {{ "%.3e"|format(item.B_ul|float) }}
-              </td>
-              <td class="px-4 py-3 whitespace-nowrap text-sm text-gray-500">
-                {{ "%.3e"|format(item.A_ul|float) }}
-              </td>
+  
             </tr>
             {% endfor %}
           </tbody>
