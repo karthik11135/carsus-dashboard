@@ -7,22 +7,22 @@
             <th
               class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200"
             >
-              Index
+              Atomic Number
             </th>
             <th
               class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200"
             >
-              Level Id
+              Ion Number
             </th>
             <th
               class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200"
             >
-              atomic_number
+              Level Number
             </th>
             <th
               class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200"
             >
-              Ion number
+              Energy
             </th>
             <th
               class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-200"
@@ -32,7 +32,7 @@
             <th
               class="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider"
             >
-              Energy
+              Metastable
             </th>
           </tr>
         </thead>
@@ -44,22 +44,22 @@
             <td
               class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r border-gray-200"
             >
-              {{ item.index }}
-            </td>
-            <td
-              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 border-r border-gray-200"
-            >
-              {{ item.level_id }}
-            </td>
-            <td
-              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 border-r border-gray-200"
-            >
               {{ item.atomic_number }}
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 border-r border-gray-200"
+            >
+              {{ item.ion_number }}
+            </td>
+            <td
+              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 border-r border-gray-200"
+            >
+              {{ item.level_number }}
             </td>
             <td
               class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-mono border-r border-gray-200"
             >
-              {{ item.ion_number }}
+              {{ "%.4f"|format(item.energy|float) }}
             </td>
             <td
               class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 border-r border-gray-200"
@@ -67,11 +67,11 @@
               {{ "%.4f"|format(item.g|float) }}
             </td>
             <td
-            class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 border-r border-gray-200"
-          >
-            {{ "%.4f"|format(item.energy|float) }}
-          </td>
-          </tr> 
+              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 border-r border-gray-200"
+            >
+              {{item.metastable}}
+            </td>
+          </tr>
           {% endfor %}
         </tbody>
       </table>
